@@ -1,0 +1,10 @@
+delicious,2.2
+happy,2
+satisfied,0.97
+memorable,0.61
+sweet,1.47
+nice,2.09
+friendly,1.94
+quick,0.55
+relaxing,1
+shiny,0.55

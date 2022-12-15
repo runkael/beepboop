@@ -1,0 +1,10 @@
+deadly,-2.26
+smell,-2.26
+smelly,-2.27
+ugly,-3.9
+painful,-3.69
+difficult,-0.6
+bumpy,-0.2
+spiky,-1
+disgusting,-2.3
+squirmy,-1.5
