@@ -12,12 +12,18 @@ public class Player {
           playerTwoName = "";
     }
 
-   public void setPlayerNames(){
+   public void setPlayerOne(){
          System.out.println("What is player one's name?");
          playerOneName = sc.nextLine();
-         System.out.println("What is player two's name?");
+         
+         System.out.println("Hello " + playerOneName + ". You are player one.");
+   }
+
+   public void setPlayerTwo(){
+      System.out.println("What is player two's name?");
          playerTwoName = sc.nextLine();
-         System.out.println("Hello " + playerOneName + ". You are player one. " + playerTwoName + ", you are player two. Welcome!");
+      System.out.println("Hello " + playerTwoName + ". You are player two");
+
    }
  
  public String getOneName(){

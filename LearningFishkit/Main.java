@@ -1,11 +1,13 @@
-package Fishkit;
+package LearningFishkit;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        int moola = 200;
-        int bait = 100;
+        //Money, bait, tickets, berryfish?, and menus
+
+        int moola = 0;
+        int bait = 0;
         boolean gimfish = false;
         boolean purpleTicket = false;
         boolean cosmicTicket = false;
@@ -41,6 +43,7 @@ public class Main {
    
         while(gimfish == false){
             if(mainMenu == true){
+                //This is the main menu!
             System.out.println(" - - - - - - - - - - - - - - - - - - - -");
             System.out.println("What would you like to do? Type your answer in lowercase.");
             System.out.println("a) Answer questions");
@@ -53,8 +56,8 @@ public class Main {
             String action = sc.nextLine();
             mainMenu = false;
             
-
-            if(action.equals("a")){
+            //(step 1) below, write the if statement that will bring the user to the "answer questions" menu if they type a
+            
                 mainMenu = false;
                 while(mainMenu == false){  
                 System.out.println(" - - - - - - - - - - - - - - - - - - - -");           
@@ -94,11 +97,13 @@ public class Main {
 
             
             }
+            //end bracket for option A should go here (step 1)
               
-            }
+            
             //Fishing
+            //(step 1) below, write the if statement that will bring the user to the "fishing" menu if they type b
        
-            if(action.equals("b")){
+            
                 boolean gofish = true;
                 while(gofish == true){
                 if(packyback.getFishIndex() == 10){
@@ -122,70 +127,69 @@ public class Main {
                     String place = sc.nextLine();
 
                     if(place.equals("a")){
+                        //(step 4) Normal pond is here
                         mainMenu = false;
                         int secretpondfishChance = (int)(Math.random()*100);
 
-                        if(berryfish == true && bait >= 1){
-                            if(secretpondfishChance >= 95){
+                        //(step 4) below, create the if/else if/else statements that check for the berry fish and run the code!
+
+                        
+                            //(step 4) if berryfish is caught should be here
                                 System.out.println("You caught the gim fish!! :D");
                                 packyback.addFeesh(gim, gimworth);
                                 bait = bait - 1;
                                 gimfish = true;
                                 break;
-                            }
+                            
     
-                            else if(secretpondfishChance >= 80){
+                            
                                 System.out.println("You caught a blue fish!");
                                 packyback.addFeesh(blue, blueworth);
                                 bait = bait - 1;
                                 fishMenu = true;
     
     
-                            }
-                            else if(secretpondfishChance >=50){
+                            
+                            
                                 System.out.println("You caught a green fish!");
                                 packyback.addFeesh(green, greenworth);
                                 bait = bait - 1;
                                 fishMenu = true;
     
-                            }
-                            else if(secretpondfishChance >=0){
+                            
                                 System.out.println("You caught a gray fish!");
                                 packyback.addFeesh(gray, grayworth);
                                 bait = bait - 1;
                                 fishMenu = true;
     
-                            }
+                            
 
 
-                        }
-                        else if(bait >= 1){
-                    
+                        
+                        //(step 4) If berryfish isn't caught should be here
                         System.out.println("fishing . . .");
                         int pondfishChance = (int)(Math.random()*100);
-                        if(pondfishChance >= 90){
+                        
                             System.out.println("You caught a blue fish!");
                             packyback.addFeesh(blue, blueworth);
                             bait = bait - 1;
                             fishMenu = true;
-                        }
+                        
 
-                        else if(pondfishChance >= 60){
                             System.out.println("You caught a green fish!");
                             packyback.addFeesh(green, greenworth);
                             bait = bait - 1;
                             fishMenu = true;
 
 
-                        }
-                        else if(pondfishChance >=0){
+                        
                             System.out.println("You caught a gray fish!");
                             packyback.addFeesh(gray, grayworth);
                             bait = bait - 1;
                             fishMenu = true;
 
-                        }
-                    }
+                        
+                    //(step 4) This should be where your final end bracket is for this entire step
 
                     else{
                         System.out.println("You don't have any bait!");
@@ -195,17 +199,19 @@ public class Main {
                     }
 
                     if(place.equals("b")){
+
+                        //(step 3) this is purple pond! create 3 conditionals under this if statement for the chance of getting a certain fish
                         if(purpleTicket ==true){
                             System.out.println("fishing . . .");
                             int purplefishChance = (int)(Math.random()*100);
-                            if(purplefishChance >= 90){
+                            //(step 3) if statement here!
+                           
                                 System.out.println("You caught a purple fish!");
                                 packyback.addFeesh(purple, purpleworth);
                                 bait = bait - 1;
                                 fishMenu = true;
-                            }
-    
-                            else if(purplefishChance >= 60){
+                            
+                            //(step 3) else if statement here
                                 System.out.println("You caught a blue fish!");
                                 packyback.addFeesh(blue, blueworth);
                                 bait = bait - 1;
@@ -213,13 +219,13 @@ public class Main {
     
     
                             }
-                            else if(purplefishChance >=0){
+                            //(step 3) else statement here
                                 System.out.println("You caught a green fish!");
                                 packyback.addFeesh(green, greenworth);
                                 bait = bait - 1;
                                 fishMenu = true;
     
-                            }
+                            
 
                         }
 
@@ -307,11 +313,12 @@ public class Main {
             }
 
                 
+            //end bracket for option b should go here (step 1)
 
-
-            }
+            
             //Shop
-            if(action.equals("c")){
+            //(step 1) below, write the if statement that will bring the user to the "shop" menu if they type c
+            
                 System.out.println("Welcome to the shop! What would you like to buy? Press z to exit the shop.");
                 System.out.println("a) ticket to Purple Pond ($20)");
                 System.out.println("b) ticket to Cosmic Cove ($60)");
@@ -415,11 +422,11 @@ public class Main {
 
 
 
-            }
+            //the end bracket for option c should go here (step 1)
 
             //Sell
+            //(step 1) below, write the if statement that will bring the user to the "sell" menu if they type d
 
-            if(action.equals("d")){
                 System.out.println(" - - - - - - - - - - - - - - - - - - - -");
                 System.out.println("Would you like to sell your fish? (y/n)");
                 String sell = sc.nextLine(); 
@@ -443,16 +450,14 @@ public class Main {
                 
 
 
-            }
+            //end bracket for option d should go here (step 1)
 
-
-            else if(mainMenu == false && commandRecognized == false){
-                
+            //(step 2) create the else if statement here!
 
             System.out.println("That command was not recognized.");
             mainMenu = true;
 
-            }
+            //(step 2) end bracket should go here
 
 
         }

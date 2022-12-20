@@ -7,18 +7,21 @@ public class Main {
     public static void main(String[] args) {
         Player playerOne = new Player();
         Player playerTwo = new Player();
-        playerOne.setPlayerNames();
+        playerOne.setPlayerOne();
+        playerTwo.setPlayerTwo();
+
         
         String nameOne = playerOne.getOneName();
         String nameTwo = playerTwo.getTwoName(); 
         boolean sameTurn;
         boolean playerOneTurn = true;
-        boolean playerTwoTurn = true;
+        boolean playerTwoTurn = false;
         Board grab = new Board();
         int onePoints = 0;
         int twoPoints = 0;
         int currentPoints = onePoints;
-        boolean currentTurn = playerOneTurn;
+        //CurrentTurn = true means player one, = false means player two
+        boolean currentTurn = true;
         String currentName = playerOne.getOneName();
 
         //Gets the correct amount of blanks from the Board 
@@ -27,15 +30,9 @@ public class Main {
         String blanc = grab.blanks();
         String key = grab.getKey();
 
-         //Player's initial points
- 
 
-         //This is what signals the end of the game. While loop: while the game's end conditions have not been met-
-         //continuously run the code
-
-       //  int end = blanc.indexOf("_");
        
-        System.out.println(answer);
+    //    System.out.println(answer);
 
         boolean end = false;
 
@@ -55,11 +52,24 @@ public class Main {
                 if(finalGuess.equals(answer)){
                     blanc = finalGuess;
                     end = true;
-                    currentPoints = 1000 + currentPoints;
+                    if(currentTurn == true){
+                       
+                        break;
+                    }
+                    else{
+                        
+                        break;
+                    }                    
+
                     
                 }else{
                     System.out.println(currentName +", that is incorrect. You have lost some points.");
-                    currentPoints = currentPoints - 500;
+                    if(currentTurn == true){
+                        onePoints -= 500;
+                    }
+                    else{
+                        twoPoints -=500;
+                    }
                     System.out.println("Your points: " + currentPoints);
                 }
 
@@ -75,31 +85,37 @@ public class Main {
                         if(!(letterCorrect == -1)){
                             key = key.substring(0, letterCorrect) + "#" + key.substring(letterCorrect + 1);
                             blanc = blanc.substring(0, letterCorrect) + oneGuess + blanc.substring(letterCorrect + 1);
-                            currentPoints = currentPoints +100;
+                            if(currentTurn == true){
+                                onePoints += 100;
+                            }
+                            else{
+                                twoPoints +=100;
+                            }
 
 
                         }
                         
-                        //  alreadyGuessed += oneGuess;
-                        //   validLetter = false;
+                       
                     }
                     
                 }
                 
-                //   blanc = blanc.substring(0, )
 
                     else{
-                    System.out.println("Sorry, that letter wasn't correct.");
-                    System.out.println("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~");
-                    if(currentTurn == playerOneTurn){
-                        currentTurn = playerTwoTurn;
+                    System.out.println("Sorry, that letter wasn't correct. You have lost your turn.");
+                    if(currentTurn == true){
+                        currentTurn = false;
                         currentPoints = twoPoints;
                         currentName = nameTwo;
+                        System.out.println("Your points: " + onePoints);
+
                         
                     }else{
-                        currentTurn = playerTwoTurn;
+                        currentTurn = true;
                         currentPoints = onePoints;
                         currentName = nameOne;
+                        System.out.println("Your points: " + twoPoints);
+
                     }
                 }
 
@@ -107,24 +123,6 @@ public class Main {
                 System.out.println("Enter a valid input\n");
             }
 
-
-
-
-            //If player One guesses it right, end game 
-            // boolean finish = false;
-
-            // if(oneGuess.equals("1")){
-            //     
-            // }
-
-            //Finds index of player one's guessed letter and creates variable for already guessed letters
-            //Also makes a boolean for whether or not to switch turns
-
-   
-           
-            //String alreadyGuessed = blanc.indexOf(oneGuess);
-
-            //Creates spaces in the word to match with the blanks
 
             
 
@@ -155,8 +153,17 @@ public class Main {
             //If player one wins, give them points and say congrats
             //**maybe change this to if false
             if(end){
-                System.out.println("Congrats, "+ currentName + ", you won!");
-                System.out.println("Here is your total points: "+ currentPoints);
+                if(currentTurn == true){
+                    onePoints += 1000;
+                    System.out.println("Congrats, "+ nameOne + ", you won!");
+                System.out.println("Here is your total points: " + onePoints);
+                }
+                else{
+                    twoPoints +=1000;
+                    System.out.println("Congrats, "+ nameTwo + ", you won!");
+                System.out.println("Here is your total points: " + twoPoints);
+                }
+                
             }
 
 

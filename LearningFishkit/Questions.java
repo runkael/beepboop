@@ -1,7 +1,8 @@
-package Fishkit;
+package LearningFishkit;
 
 public class Questions {
 
+    //These are the various questions and answers. They line up with one another
     String[] mathQuestions = {"1 + 1", "2 + 2", "3 + 3", "4 + 4", "5 + 5", "6 + 6", "7 + 7", "8 + 8", "9 + 9", "10 + 10", "2 + 3", " 4 + 5", "7 + 3", "6 + 2", "9 + 4", "5 + 7", "8 + 4", "3 + 22"};
     String[] Answers = {"2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "5", "9", "10", "8", "13", "12", "12", "25"};
     

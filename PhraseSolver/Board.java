@@ -8,14 +8,14 @@ public class Board{
 
 private String loadPhrase()
   {
-    
+    String tempPhrase = "";
     int numOfLines = 0;
     tempPhrase = "how are you";
     
     try 
     {
       
-      Scanner sc = new Scanner(new File(/*Replace with the path*/"phrases.txt"));
+      Scanner sc = new Scanner(new File(/*Replace with the path*/"/workspace/beepboop/PhraseSolver/phrases.txt"));
       while (sc.hasNextLine())
       {
         tempPhrase = sc.nextLine().trim();
@@ -28,7 +28,7 @@ private String loadPhrase()
     try 
     {
       int count = 0;
-      Scanner sc = new Scanner(new File(/*Replace with the path*/"phrases.txt"));
+      Scanner sc = new Scanner(new File(/*Replace with the path*/"/workspace/beepboop/PhraseSolver/phrases.txt"));
       while (sc.hasNextLine())
       {
         count++;
@@ -63,7 +63,7 @@ private String loadPhrase()
       }
 
     
-    System.out.println(key);
+   // System.out.println(key);
    // System.out.println(blank);
 
     return blank;
