@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int moola = 200;
-        int bait = 100;
+        int moola = 0;
+        int bait = 0;
         boolean gimfish = false;
         boolean purpleTicket = false;
         boolean cosmicTicket = false;

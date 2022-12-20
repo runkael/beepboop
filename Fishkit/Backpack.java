@@ -12,17 +12,18 @@ public class Backpack {
         fish[fishIndex] = n;
         worth[fishIndex] = w;
         fishIndex += 1;
-       // System.out.println(fishIndex);
+       System.out.println(fishIndex);
     }
 
     public int sellFeesh(){
         sellPacky = 0;
-        for(int i = 0; i < fish.length; i++){
+        int temp = fishIndex;
+        for(int i = 0; i < temp; i++){
             sellPacky += worth[i];
             fish[i] = "";
             worth[i] = 0;
             fishIndex -= 1;
-         //   System.out.println(fishIndex);
+           System.out.println(fishIndex);
         }
         return sellPacky;
     }
